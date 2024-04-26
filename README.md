@@ -70,3 +70,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 # Laravel
 
 Getting to learn more abour Laravel in 30 days.
+
