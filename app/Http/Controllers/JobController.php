@@ -48,16 +48,11 @@ class JobController extends Controller
     }
 
     public function update(Job $job)
-    {
-        //validate
-    request()->validate([
+    {request()->validate([
         'title' => ['required', 'min:3'],
         'salary' => ['required']
     ]);
-    //authorize (On hold)
-    //.....
-
-    //update the job
+    
     $job->title = request('title');
     $job->salary = request('salary');
 
@@ -66,18 +61,15 @@ class JobController extends Controller
         'salary' => request('salary'),
 
     ]);
-    //persist
-    //redirect to the job page
+    
     return redirect('/jobs/' . $job->id);
     }
 
     public function destroy(Job $job)
     {
-        //authorize (ON hold...
-    //Delete the job
+        
     $job ->delete();
 
-    //redirect
     return redirect('/jobs');
     }
 }
